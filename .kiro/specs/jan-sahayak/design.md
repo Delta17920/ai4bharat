@@ -28,11 +28,7 @@ The architecture diagram above shows the complete AWS infrastructure for Jan-Sah
 - **Location Service**: AWS Location Service for finding nearest government offices
 
 ```mermaid
----
-config:
-  layout: elk
-  theme: mc
----
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e8f4f8','primaryTextColor':'#000','primaryBorderColor':'#2c5aa0','lineColor':'#2c5aa0','secondaryColor':'#fff4e6','tertiaryColor':'#f0f0f0','background':'#ffffff','mainBkg':'#e8f4f8','secondBkg':'#fff4e6','tertiaryBkg':'#f0f0f0','textColor':'#000','nodeBorder':'#2c5aa0','clusterBkg':'#f5f5f5','clusterBorder':'#666','edgeLabelBackground':'#ffffff'}, 'flowchart': {'defaultRenderer': 'elk'}}}%%
 graph TB
     subgraph "Mobile Client"
         UI[Voice UI Layer]
@@ -98,11 +94,7 @@ graph TB
 **User Journey Flowchart:**
 
 ```mermaid
----
-config:
-  layout: elk
-  theme: mc
----
+%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e8f4f8','primaryTextColor':'#000','primaryBorderColor':'#2c5aa0','lineColor':'#2c5aa0','secondaryColor':'#fff4e6','tertiaryColor':'#f0f0f0','background':'#ffffff','mainBkg':'#e8f4f8','secondBkg':'#fff4e6','tertiaryBkg':'#f0f0f0','textColor':'#000','nodeBorder':'#2c5aa0','clusterBkg':'#f5f5f5','clusterBorder':'#666','edgeLabelBackground':'#ffffff'}, 'flowchart': {'defaultRenderer': 'elk'}}}%%
 flowchart TD
     Start([User Opens App]) --> LangDetect{Language<br/>Detected?}
     LangDetect -->|No| LangPrompt[Prompt Language Selection]
@@ -191,11 +183,11 @@ flowchart TD
     
     Complete --> End([User Can Visit Office])
     
-    style PhysicalDefect fill:#ffcccc
-    style OverrideOffice fill:#ffcccc
-    style ValidDocs fill:#ccffcc
-    style DisplayCard fill:#cce5ff
-    style ProactiveNudge fill:#fff4cc
+    style PhysicalDefect fill:#ffcccc,stroke:#cc0000,stroke-width:2px,color:#000
+    style OverrideOffice fill:#ffcccc,stroke:#cc0000,stroke-width:2px,color:#000
+    style ValidDocs fill:#ccffcc,stroke:#00cc00,stroke-width:2px,color:#000
+    style DisplayCard fill:#cce5ff,stroke:#0066cc,stroke-width:2px,color:#000
+    style ProactiveNudge fill:#fff4cc,stroke:#ccaa00,stroke-width:2px,color:#000
 ```
 
 **Voice Interaction Flow:**
