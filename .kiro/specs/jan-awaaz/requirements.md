@@ -1,12 +1,12 @@
-# Requirements Document: Jan-Sahayak
+# Requirements Document: Jan-Awaaz
 
 ## Introduction
 
-Jan-Sahayak is a voice-first mobile application designed to help rural citizens in India access government schemes through voice interaction in major Indian regional languages. The system addresses critical barriers including language limitations, complex documentation requirements, lack of scheme awareness, and low digital literacy. The platform enables users to describe their situation verbally, verify documents through image capture, and receive personalized guidance on eligible schemes with clear directions to the correct government office.
+Jan-Awaaz is a voice-first mobile application designed to help rural citizens in India access government schemes through voice interaction in major Indian regional languages. The system addresses critical barriers including language limitations, complex documentation requirements, lack of scheme awareness, and low digital literacy. The platform enables users to describe their situation verbally, verify documents through image capture, and receive personalized guidance on eligible schemes with clear directions to the correct government office.
 
 ## Glossary
 
-- **System**: The Jan-Sahayak mobile application and backend services
+- **System**: The Jan-Awaaz mobile application and backend services
 - **User**: Rural citizen seeking government scheme assistance (primary user)
 - **CSC_Operator**: Common Service Centre operator who assists with applications (secondary user)
 - **Voice_Input**: Audio captured from user's microphone in major Indian regional languages (Hindi, Tamil, Telugu, Kannada, Malayalam, Marathi, Bengali, Gujarati, Punjabi, Odia)
@@ -196,3 +196,4 @@ Jan-Sahayak is a voice-first mobile application designed to help rural citizens 
 3. WHEN Voice_Input is processed, THE System SHALL not store raw audio beyond the active Session
 4. WHEN a User's data is archived after 30 days, THE System SHALL remove all Document_Images and retain only scheme match history
 5. THE System SHALL NOT share User data with third parties without explicit consent
+

@@ -1,8 +1,8 @@
-# Design Document: Jan-Sahayak
+# Design Document: Jan-Awaaz
 
 ## Overview
 
-Jan-Sahayak is a voice-first mobile application that bridges the gap between rural Indian citizens and government schemes through intelligent voice interaction, document verification, and smart routing. The system architecture is built on AWS services to provide scalable, low-latency voice processing, document analysis, and knowledge-based scheme matching.
+Jan-Awaaz is a voice-first mobile application that bridges the gap between rural Indian citizens and government schemes through intelligent voice interaction, document verification, and smart routing. The system architecture is built on AWS services to provide scalable, low-latency voice processing, document analysis, and knowledge-based scheme matching.
 
 The design follows a mobile-first, voice-centric approach where 90% of user interaction happens through speech. The system uses Amazon Transcribe for multi-language speech-to-text, Amazon Polly for natural voice responses, Amazon Textract for document verification, and Amazon Bedrock Knowledge Base for accurate scheme matching. A critical design principle is "no hallucination" - the system only returns schemes that exist in verified government PDF documents.
 
@@ -16,9 +16,9 @@ Key architectural decisions:
 
 ### High-Level Architecture
 
-![Jan-Sahayak AWS Architecture](image/jan-sahayak-secure-architecture.png)
+![Jan-Awaaz AWS Architecture](image/generated-diagrams/jan-awaaz-secure-architecture.png)
 
-The architecture diagram above shows the complete AWS infrastructure for Jan-Sahayak:
+The architecture diagram above shows the complete AWS infrastructure for Jan-Awaaz:
 
 - **User Layer**: Rural citizens interact via mobile devices with voice and camera inputs
 - **API Gateway**: Central entry point for all client requests
@@ -468,7 +468,7 @@ interface PendingAction {
 **DynamoDB Schema:**
 
 ```
-Table: jan-sahayak-sessions
+Table: Jan-Awaaz-sessions
 Partition Key: phoneNumber (String)
 Sort Key: sessionId (String)
 Attributes:
@@ -635,7 +635,7 @@ type IconType = 'GREEN_CHECK' | 'RED_CROSS' | 'YELLOW_WARNING' | 'BLUE_INFO'
 
 ## Security Architecture
 
-Jan-Sahayak handles sensitive citizen data including Aadhaar cards, income certificates, and personal information. The security architecture implements defense-in-depth with encryption, access controls, and compliance measures.
+Jan-Awaaz handles sensitive citizen data including Aadhaar cards, income certificates, and personal information. The security architecture implements defense-in-depth with encryption, access controls, and compliance measures.
 
 ### Encryption Strategy
 
@@ -1446,7 +1446,7 @@ A property is a characteristic or behavior that should hold true across all vali
 
 ### Dual Testing Approach
 
-Jan-Sahayak requires both unit testing and property-based testing to ensure comprehensive coverage:
+Jan-Awaaz requires both unit testing and property-based testing to ensure comprehensive coverage:
 
 **Unit Tests** focus on:
 - Specific examples of voice inputs in each supported language
@@ -1473,12 +1473,12 @@ Both approaches are complementary and necessary. Unit tests catch concrete bugs 
 **Test Configuration:**
 - Minimum 100 iterations per property test (due to randomization)
 - Each property test must reference its design document property
-- Tag format: `Feature: jan-sahayak, Property {number}: {property_text}`
+- Tag format: `Feature: Jan-Awaaz, Property {number}: {property_text}`
 
 **Example Property Test Structure:**
 
 ```typescript
-// Feature: jan-sahayak, Property 6: No Hallucinated Schemes
+// Feature: Jan-Awaaz, Property 6: No Hallucinated Schemes
 test('all returned schemes exist in knowledge base', async () => {
   await fc.assert(
     fc.asyncProperty(
@@ -1589,3 +1589,4 @@ test('all returned schemes exist in knowledge base', async () => {
 - Verify terminology matches regional usage
 - Verify examples are culturally relevant
 - Verify icons are universally understood
+
